@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Translate in Split Window",
+  "version": "0.1.0",
+  "description": "左に原文、右にGoogle翻訳した同じページを並べて表示し、スクロールを同期する",
+  "permissions": ["tabs", "storage", "contextMenus"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "原文と翻訳を左右に並べる" },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+T" }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
