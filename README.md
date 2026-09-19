@@ -25,3 +25,7 @@
 ```powershell
 ./package.ps1   # dist/translate-in-split-window-<version>.zip を生成
 ```
+
+## License
+
+MIT
